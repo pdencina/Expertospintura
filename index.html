@@ -16,8 +16,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cr);color:var(--g);overflow-x:hidden;font-size:16px}
 
-#bgVideo{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(30,30,29,.7);z-index:-1;pointer-events:none}
+#bgVideo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+.hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(30,30,29,.55);z-index:0;pointer-events:none}
 
 .topbar{background:var(--n);padding:10px 5%;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
 .topbar a{color:#fff;text-decoration:none;font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px}
@@ -36,8 +36,6 @@ nav{background:var(--g);padding:14px 5%;display:flex;align-items:center;justify-
 .nl .nwa svg{width:15px;height:15px;fill:#fff}
 
 .hero{background:var(--g);position:relative;overflow:hidden;padding:60px 5% 50px}
-.hd1{position:absolute;width:500px;height:500px;border-radius:50%;background:var(--n);opacity:.06;top:-200px;right:-150px;pointer-events:none}
-.hd2{position:absolute;width:300px;height:300px;border-radius:50%;background:var(--n);opacity:.04;bottom:-100px;left:-80px;pointer-events:none}
 .hi{max-width:700px;margin:0 auto;position:relative;z-index:1}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,86,10,.15);border:1px solid rgba(232,86,10,.3);color:var(--n);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:24px}
 .bdot{width:6px;height:6px;border-radius:50%;background:var(--n);display:inline-block;animation:blink 1.5s infinite}
@@ -249,11 +247,6 @@ footer{background:var(--g);padding:40px 5% 24px}
 </head>
 <body>
 
-<!-- Video de fondo -->
-<video autoplay muted loop playsinline id="bgVideo">
-  <source src="istockphoto-473357765-640_adpp_is.mp4" type="video/mp4">
-</video>
-
 <div class="topbar">
   <a href="tel:+56965860352">
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -299,6 +292,10 @@ footer{background:var(--g);padding:40px 5% 24px}
 </div>
 
 <section class="hero">
+  <!-- Video de fondo del hero -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="istockphoto-473357765-640_adpp_is.mp4" type="video/mp4">
+  </video>
   <div class="hd1"></div><div class="hd2"></div>
   <div class="hi">
     <div class="badge"><span class="bdot"></span> Disponible hoy · Santiago RM</div>
